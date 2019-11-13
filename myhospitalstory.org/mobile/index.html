@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Comment at top of file -->
+    <link rel="shortcut icon" href="img/icon2.png">
+    <link rel="apple-touch-icon" href="img/icon2.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <title>My Hospital Story</title>
+    <link href="jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css" rel="stylesheet" />
+    <link href="custom/tweaks2.css" rel="stylesheet">
+
+    <script src="cache/jquery-2.2.1.min.js"></script>
+
+    <script>
+        $(document).bind("mobileinit", function () {
+            $.mobile.defaultPageTransition = 'slide';
+            //$.mobile.loader.prototype.options.textVisible = true;
+        });
+        window.onerror = function (message, url, lineNumber) {
+            console.log("Error: " + message + " in " + url + " at line " + lineNumber);
+        }
+    </script>
+
+    <script src="custom/jsutils2.js"></script>
+    <script src="jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <script src="fastbuttons/jquery.mobile.fastButtons.js"></script>
+    <script src="jquery-cookie-master/jquery.cookie.js"></script>
+    <script src="Swipe-master/swipe.js"></script>
+    <link rel="stylesheet" href="cubiq-add-to-homescreen-6f289f1/style/add2home.css">
+    <script type="application/javascript" src="cubiq-add-to-homescreen-6f289f1/src/add2home.js"></script>
+    <script src="cache/detectMobileBrowser.js"></script>
+
+    <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-75470339-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <script type="text/javascript">
+        $(document).bind("pageinit", function () {
+            $('#closeSurveyDialog').bind("tap", function () {
+                $('#surveyDialogPage').dialog("close");
+            })
+
+            $('#okSurveyDialog').bind("tap", function () {
+                window.location.href = "https://bchinnovation.typeform.com/to/ryDgUY";
+            })
+
+        });
+    </script>
+    <style>
+        @media only screen and (max-width: 500px) {
+            .introImg {
+                width: 95%;
+                background: #EEE;
+            }
+        }
+
+        @media only screen and (min-width: 500px) {
+            .introImg {
+                width: 75%;
+                background: #EEE;
+            }
+        }
+    </style>
+
+</head>
+
+<body class="home MOBILE">
+
+    <!--
+<div data-role="page" id="PRE-INTRO">
+    <div data-role="content">
+        <ul data-role="listview" data-inset="true">
+            <li><a><img src="/static/img/greenCheck-small.png" class="ui-li-icon">Onez</a></li>
+            <li><a><img src="/static/img/greenCheck-small.png" class="ui-li-icon" style="visibility: hidden;">Two</a></li>
+            <li><a><img src="/static/img/greenCheck-small.png" class="ui-li-icon" style="visibility: hidden;">Three</a></li>
+        </ul>
+    </div>
+</div>
+-->
+
+    <div data-role="page" id="INTRO">
+        <div data-role="content" style="text-align: center">
+            <img src="img/myhospital-story-logo.jpg" class="introImg"
+                style="border-radius: 15px; border: 1px solid #BBB; box-shadow: 10px 10px 5px #BBB; box-shadow: 6px 7px 23px #BBB;">
+            <h3 style="text-align: center;">Plan and prepare for your child's visit to Boston Children's Hospital</h3>
+
+            <a href="#INTRO-2" data-role="button" class="NEXT" data-theme="b">Next</a>
+
+        </div>
+    </div>
+
+    <div data-role="page" id="INTRO-2">
+        <div data-role="header" data-position="fixed">
+            <a data-icon="back" data-rel="back">Back</a>
+            <h1 style="margin-right: 0px; margin-left: 0px;">Introduction</h1>
+        </div>
+        <div data-role="content">
+
+            <div class="ABOUT-HEADER">My Hospital Story is a collection of hospital narratives designed to help children
+                prepare for medical visits and procedures at Boston Children’s Hospital. This app allows you to choose
+                from several stories and shows step-by-step photos of an upcoming procedure or appointment from your
+                child's perspective. Try to review My Hospital Stories with your child multiple times in the days and
+                weeks prior to an appointment so they have enough time to prepare.</div>
+            <div class="ABOUT-HEADER">Once you click on the <b>Next</b> button, you will be instructed to input your
+                child's name and caregiver(s). Then pick your story from the list provided. At the end of the story
+                there will be a short survey about the app to help us improve.</div>
+
+            <hr>
+
+            <div class="ABOUT-HEADER">Content Development:</div>
+            <div class="ABOUT-CONTENT">Content was developed by teams in the Boston Children’s Hospital’s Child Life
+                Services and <a
+                    href="http://www.childrenshospital.org/centers-and-services/autism-spectrum-center-program">Autism
+                    Spectrum Center</a>.</div>
+            <div class="ABOUT-HEADER">Special Thanks:</div>
+            <div class="ABOUT-CONTENT">To all the families and BCH staff that participated in making these stories</div>
+
+            <a href="#PERSONALIZE-1" data-role="button" class="NEXT" data-theme="b">Next</a>
+
+
+        </div>
+    </div>
+
+    <div data-role="page" id="PERSONALIZE-1">
+
+        <div data-role="header" data-position="fixed">
+            <a data-icon="back" data-rel="back">Back</a>
+            <h1 style="margin-right: 0px; margin-left: 0px;">In My Story...</h1>
+        </div>
+
+        <div data-role="content">
+            <h3 class="ERROR">Please fill in your name and at least one parent</h3>
+            <form>
+                <fieldset>
+                    <label for="CHILD-NAME">Child's Name:</label>
+                    <input type="text" name="CHILD-NAME" id="CHILD-NAME" value="" />
+
+                    <label for="PARENT-1">Parent Name or Role (e.g. "mommy"):</label>
+                    <input type="text" name="PARENT-1" id="PARENT-1" value="" />
+
+                    <label for="PARENT-2">Parent Name or Role (e.g. "daddy"):</label>
+                    <input type="text" name="PARENT-2" id="PARENT-2" value="" />
+
+                </fieldset>
+            </form>
+            <a href="#PERSONALIZE-2" data-role="button" data-theme="b" class="NEXT">Next</a>
+
+        </div>
+    </div>
+
+
+    <div data-role="page" id="PERSONALIZE-2">
+        <div data-role="header" data-position="fixed">
+            <a data-icon="back" data-rel="back">Back</a>
+            <h1 style="margin-right: 0px; margin-left: 0px;">Choose Story</h1>
+        </div>
+        <!--old
+    <div data-role="content">
+        <ul data-role="listview" data-inset="true" class="STORY-LIST">
+        </ul>
+    </div>
+    -->
+
+        <!-- Accordion-->
+        <div data-role="content">
+            <div data-role="listview" data-inset="true" data-shadow="false" class="STORY-CATEGORIES">
+            </div>
+        </div>
+
+    </div>
+
+    <div data-role="page" id="PERSONALIZE-3">
+        <div data-role="header" data-position="fixed">
+            <a data-icon="back" data-rel="back">Back</a>
+            <h1 style="margin-right: 0px; margin-left: 0px;">Features</h1>
+        </div>
+        <div data-role="content">
+            <form>
+                <fieldset data-role="controlgroup" id="LANGUAGE-OPTIONS">
+                    <legend>Language:</legend>
+                </fieldset>
+                <fieldset data-role="controlgroup" id="ARTWORK-OPTIONS">
+                    <legend>Artwork:</legend>
+                </fieldset>
+            </form>
+            <a href="#MAIN-STORY" data-role="button" data-theme="b" class="NEXT">Next</a>
+        </div>
+    </div>
+
+
+    <div data-role="page" id="MAIN-STORY">
+        <div data-role="popup" id="PREFS-SWITCH" data-overlay-theme="b" data-theme="b">
+            <a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext"
+                class="ui-btn-right">Close</a>
+            <div data-role="content">
+                <h4 id="NEW-ARTWORK-LABEL">Please select new Artwork</h4>
+                <h4 id="NEW-LANGUAGE-LABEL">Please select a new Language</h4>
+                <ul data-role="listview" data-inset="true" id="PREFS-SWITCH-CONTENT">
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="header" data-position="fixed" class="WITHOUT-TEXT">
+            <a data-icon="bars" data-iconpos="notext" href="#PERSONALIZE-2">Stories</a>
+            <h1 class="MAIN-TITLE" style="margin-right: 0px; margin-left: 0px;">MyHospitalVisit</h1>
+            <a data-icon="home" data-iconpos="notext" href="#INTRO">Home</a>
+        </div>
+        <div data-role="header" data-position="fixed" class="WITH-TEXT">
+            <a data-icon="bars" href="#PERSONALIZE-2">Stories</a>
+            <h1 class="MAIN-TITLE" style="margin-right: 0px; margin-left: 0px;">MyHospitalVisit</h1>
+            <a data-icon="home" href="#INTRO">Home</a>
+        </div>
+        <div data-role="content" style="padding: 0px; position: relative; overflow: hidden; height: 100%;">
+            <div class="swipe" id="STORY-SWIPE">
+                <div class="swipe-wrap">
+                    <div id="SLIDE-0">
+                        <div><img></div>
+                        <div class="PAGE-TXT"></div>
+                    </div>
+                    <div id="SLIDE-1">
+                        <div><img></div>
+                        <div class="PAGE-TXT"></div>
+                    </div>
+                    <div id="SLIDE-2">
+                        <div><img></div>
+                        <div class="PAGE-TXT"></div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="MAIN-SCREEN"
+                style="position: absolute; top: 0px; left: 0px; background-color: white; z-index: 100; overflow: hidden; display: none;">
+                <div style="width: 100%; text-align: center; top: 20%;">
+                    <!--h1>Loading...</h1-->
+                </div>
+            </div>
+
+        </div>
+        <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+            <a id="PREV-PAGE" class="PAGE-TURN" data-icon="arrow-l"
+                style="float: left; visibility: hidden; margin-left: 5px;">Prev</a>
+            <div style="display: inline-block; padding-top: 7px;">
+                Page <span id="CUR-PAGE">x</span> of <span ID="TOTAL-PAGES">x</span>
+            </div>
+            <a id="NEXT-PAGE" class="PAGE-TURN" data-icon="arrow-r" data-iconpos="right"
+                style="float: right; margin-right: 5px;">Next</a>
+        </div>
+
+    </div>
+
+    <!-- Survey Dialog -->
+    <div id="surveyDialogPage" data-role="page">
+        <div data-role="header">
+            <h1>We want your feedback</h1>
+        </div>
+        <div data-role="content">
+            Thank you for using this system. Please help us improve this system by completing this survey. The survey
+            will take approximately 2-5 minutes to complete.
+            <button id="okSurveyDialog">Yes</button>
+            <button id="closeSurveyDialog">No</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    var g_CategoryNames = {}
+
+    g_CategoryNames[0] = { key: "main", name: "Main Hospital" };
+    g_CategoryNames[1] = { key: "lexington", name: "Lexington" };
+    g_CategoryNames[2] = { key: "mehc", name: "Martha Eliot Health Center" };
+    g_CategoryNames[3] = { key: "peabody", name: "Peabody" };
+    g_CategoryNames[4] = { key: "waltham", name: "Waltham" };
+    g_CategoryNames[5] = { key: "general", name: "General Procedures" };
+
+
+    // g_CategoryNames["Other"] = "Other";
+    var g_HasStory = false;
+    var g_Stories = [];
+    var g_Categories = [];
+    var g_PrevStory = -1;
+    var g_CurSlideIndex = 0;
+    var g_CurStory = $.cookie('CUR-STORY');
+    var g_ChildName = $.cookie('CHILD-NAME');
+    var g_Parent1 = $.cookie('PARENT-1');
+    var g_Parent2 = $.cookie('PARENT-2');
+
+    var g_LanguageIndex = 0;
+    var g_ArtworkIndex = 0;
+
+    var g_Click = 'click'
+
+    registerStory = function (story) {
+        console.log('registering story: ' + story.title + ' with index:' + g_Stories.length);
+        $('.STORY-LIST').append('<li><a STORY-INDEX=' + g_Stories.length + '><img src="img/greenCheck-small.png" class="ui-li-icon" style="visibility: hidden;">' + story.title + '</a></li>');
+        g_Stories.push(story);
+
+        if (story.categoryToken != undefined && story.categoryToken != '') {
+            if (jQuery.inArray(story.categoryToken, g_Categories) == -1) //remove duplicates here...
+                g_Categories.push(story.categoryToken);
+
+        } else {
+            console.log("this story has no category");
+            if (jQuery.inArray("Other", g_Categories) == -1) //remove duplicates here...
+                g_Categories.push("Other");
+
+        }
+    }
+
+</script>
+
+
+<script src="stories/general/Audiology/bchaudiology.js"></script>
+<script src="stories/general/CardiacClinic-ECHO/echo.js"></script>
+<script src="stories/general/CardiacClinic-EKG/ekg.js"></script>
+<script src="stories/general/Casting/casting.js"></script>
+<script src="stories/general/CastRemoval/castremoval.js"></script>
+<script src="stories/general/DentalCleaning/dentalcleaning.js"></script>
+<script src="stories/general/EEG-LongTermMonitoring/lteeg.js"></script>
+<script src="stories/general/EEG-Outpatient/opeeg.js"></script>
+<script src="stories/general/EKG-Inpatient/EKGInpatient.js"></script>
+<script src="stories/general/IV-Insertion/IV.js"></script>
+<!-- <script src="stories/general/PeabodyPhlebotomy/phleb.js"></script> -->
+<script src="stories/general/PeabodyUltrasound/ultrasound.js"></script>
+<script src="stories/general/PeabodyX-Ray/xray.js"></script>
+<script src="stories/general/SleepStudy/sleepstudy.js"></script>
+<script src="stories/general/ModifiedBariumSwallow/modifiedBariumSwallow.js"></script>
+<script src="stories/general/NG-TubePlacement/ngTube.js"></script>
+<script src="stories/general/Phlebotomy-MainHospital/bchphleb.js"></script>
+
+
+<script src="stories/main/Audiology/bchaudiology.js"></script>
+<script src="stories/main/CardiacClinic-ECHO/echo.js"></script>
+<script src="stories/main/CardiacClinic-EKG/ekg.js"></script>
+<script src="stories/main/Casting/casting.js"></script>
+<script src="stories/main/CastRemoval/castremoval.js"></script>
+<script src="stories/main/DaySurgery/daysurg.js"></script>
+<script src="stories/main/DentalCleaning/dentalcleaning.js"></script>
+<script src="stories/main/DMC/DMC.js"></script>
+<script src="stories/main/EEG-LongTermMonitoring/lteeg.js"></script>
+<script src="stories/main/EEG-Outpatient/opeeg.js"></script>
+<script src="stories/main/EKG-Inpatient/EKGInpatient.js"></script>
+<script src="stories/main/IV-Insertion/IV.js"></script>
+<script src="stories/main/PhlebotomyMainHospital/bchphleb.js"></script>
+<script src="stories/main/SleepStudy/sleepstudy.js"></script>
+<script src="stories/main/SurgeryWithAdmission/surgadmit.js"></script>
+<script src="stories/main/CardiacSurgery/cardiacSurgery.js"></script>
+<script src="stories/main/ModifiedBariumSwallow/modifiedBariumSwallow.js"></script>
+<script src="stories/main/NeurologyVisit/neuroVisit.js"></script>
+<script src="stories/main/NGTubePlacement/ngTube.js"></script>
+<script src="stories/main/VitalSignsPrimaryCare/vitals.js"></script>
+
+
+<script src="stories/peabody/PeabodyAudiology/audiology.js"></script>
+<script src="stories/peabody/PeabodyGastroenterology/GI.js"></script>
+<script src="stories/peabody/PeabodyNeurology/neurology.js"></script>
+<script src="stories/peabody/PeabodyOtolaryngology/otolaryn.js"></script>
+<script src="stories/peabody/PeabodyOutpatientEEG/eeg.js"></script>
+<script src="stories/peabody/PeabodyPhlebotomy/phleb.js"></script>
+<script src="stories/peabody/PeabodyUltrasound/ultrasound.js"></script>
+<script src="stories/peabody/PeabodyX-Ray/xray.js"></script>
+
+<script src="stories/waltham/WalthamNeurologyClinic/walthamneurology.js"></script>
+
+<script src="stories/lexington/LexingtonSurgery/lexingtonSurgery.js"></script>
+
+<script src="stories/mehc/GeneralVisit/mehcGeneral.js"></script>
+
+
+
+<script>
+
+    if (g_CurStory != undefined) {
+        var story = g_Stories[g_CurStory];
+        if (story) {
+            var languageToken = $.cookie('LANGUAGE-' + story.token);
+            for (var ii = 0; ii < story.language.length; ii++) {
+                if (languageToken == story.language[ii].token) {
+                    g_LanguageIndex = ii;
+                    break;
+                }
+            }
+
+            var artworkToken = $.cookie('ARTWORK-' + g_Stories[g_CurStory].token);
+            for (var ii = 0; ii < story.artwork.length; ii++) {
+                if (artworkToken == story.artwork[ii].token) {
+                    g_ArtworkIndex = ii;
+                    break;
+                }
+            }
+        }
+    }
+
+    var g_PrevPage = 0;
+
+    var flipToPage = function (page) {
+
+        var story = g_Stories[g_CurStory];
+
+        if (g_PrevPage == 0 && page == 1) {
+            g_CurSlideIndex++;
+            setupSlide(story, $('#SLIDE-0'), g_CurSlideIndex - 1);
+            setupSlide(story, $('#SLIDE-2'), g_CurSlideIndex + 1);
+        }
+        else if (g_PrevPage == 1 && page == 2) {
+            g_CurSlideIndex++;
+            setupSlide(story, $('#SLIDE-0'), g_CurSlideIndex + 1);
+            setupSlide(story, $('#SLIDE-1'), g_CurSlideIndex - 1);
+        }
+        else if (g_PrevPage == 2 && page == 0) {
+            g_CurSlideIndex++;
+            setupSlide(story, $('#SLIDE-1'), g_CurSlideIndex + 1);
+            setupSlide(story, $('#SLIDE-2'), g_CurSlideIndex - 1);
+        }
+        else if (g_PrevPage == 0 && page == 2) {
+            g_CurSlideIndex--;
+            setupSlide(story, $('#SLIDE-0'), g_CurSlideIndex + 1);
+            setupSlide(story, $('#SLIDE-1'), g_CurSlideIndex - 1);
+        }
+        else if (g_PrevPage == 2 && page == 1) {
+            g_CurSlideIndex--;
+            setupSlide(story, $('#SLIDE-0'), g_CurSlideIndex - 1);
+            setupSlide(story, $('#SLIDE-2'), g_CurSlideIndex + 1);
+        }
+        else if (g_PrevPage == 1 && page == 0) {
+            g_CurSlideIndex--;
+            setupSlide(story, $('#SLIDE-1'), g_CurSlideIndex + 1);
+            setupSlide(story, $('#SLIDE-2'), g_CurSlideIndex - 1);
+        }
+
+        g_PrevPage = page;
+
+        $('a#PREV-PAGE').css('visibility', 'visible');
+        $('a#NEXT-PAGE').css('visibility', 'visible');
+        $('a#NEXT-PAGE').text('Next');
+        $('a#NEXT-PAGE').buttonMarkup({ icon: "arrow-r" });
+
+        g_FirstSlideStop = false;
+        g_LastSlideStop = false;
+
+        if (g_CurSlideIndex == 0) {
+            $('a#PREV-PAGE').css('visibility', 'hidden');
+            g_FirstSlideStop = true;
+        }
+
+        if (story.token == "LTMonitoringEEG" || story.token == "overnightsurg" || story.token == "audio") { // story that has different lenght between boy and girl
+            if (g_CurSlideIndex == story.artwork[g_ArtworkIndex].text.length - 1) {
+                $('a#NEXT-PAGE').text('Done');
+                $('a#NEXT-PAGE').buttonMarkup({ icon: "check" });
+                g_LastSlideStop = true;
+            }
+        } else {
+            if (g_CurSlideIndex == story.language[g_LanguageIndex].text.length - 1) {
+                $('a#NEXT-PAGE').text('Done');
+                g_LastSlideStop = true;
+                $('a#NEXT-PAGE').buttonMarkup({ icon: "check" });
+            }
+        }
+
+        $('span#CUR-PAGE').text((g_CurSlideIndex + 1));
+    }
+
+    $(function () {
+        console.log('jquery init');
+        //sort list by stories
+        sorting(g_Stories, 'categoryToken');
+        sorting(g_Stories, 'title');
+        console.log('g_Categories found:' + g_Categories.length);
+        console.log(g_Categories)
+        console.log(g_CategoryNames)
+
+        //var storyIndex = 0
+        //set  up different list for accordions
+        $.each(g_CategoryNames, function (index, val) {
+
+            var categoryStoriesHtml = '<div data-role="collapsible" id="catgNameCollapse_' + index + '" data-collapsed="false" data-iconpos="right" data-inset="false" data-theme="b"><h3>' + g_CategoryNames[index].name + '</h3>';
+            categoryStoriesHtml = categoryStoriesHtml + '<p><ul data-role="listview" data-inset="true">'
+
+            $.each(g_Stories, function (key, story) {
+                if (story.categoryToken == g_CategoryNames[index].key) { //categories matched
+                    console.log('Categories matched' + story.title + ' with index: ' + key);
+                    // $('.STORY-CATEGORIES').append('<li><a STORY-CATEGORY-INDEX=' + key + '><img src="img/greenCheck-small.png" class="ui-li-icon" style="visibility: hidden;">' + story.title + '</a></li>');
+                    categoryStoriesHtml = categoryStoriesHtml + '<li class="ui-li-has-icon"><a STORY-CATEGORY-INDEX=' + key + ' id="selectStoryIcon_' + key + '" style="cursor: pointer;"><img src="img/greenCheck-small.png" class="ui-li-icon" style="visibility: hidden;">' + story.title + '</a></li>';
+                    //storyIndex = storyIndex + 1
+                }
+            });
+            categoryStoriesHtml = categoryStoriesHtml + '</p></ul>';
+            categoryStoriesHtml = categoryStoriesHtml + '</div><br/>';
+            $('.STORY-CATEGORIES').append(categoryStoriesHtml);
+        });
+
+        console.log("stCatg query::" + $('.STORY-CATEGORIES'));
+
+        if (window.cordova || window.PhoneGap || window.phonegap || $.browser.mobile) {
+            g_Click = 'vclick'
+            console.log('running on mobile browser');
+            fastButtons.replace();
+        }
+
+        $('#STORY-SWIPE .PAGE-TXT').on(g_Click, function (event) {
+            console.log('clikced in language');
+
+            var story = g_Stories[g_CurStory];
+            if (story.token == "overnightsurg" || story.token == "audio") { // story that has different length between boy and girl
+                if (story.artwork.length > 1) {
+
+                    $('#NEW-ARTWORK-LABEL').hide();
+                    $('#NEW-LANGUAGE-LABEL').show();
+
+                    var target = $('#PREFS-SWITCH-CONTENT');
+                    target.empty();
+
+                    for (var ii = 0; ii < story.artwork.length; ii++) {
+                        target.append('<li><a INDEX="' + ii + '" id="' + story.artwork[ii].token + '"><img src="img/greenCheck-small.png" class="ui-li-icon" style="visibility: hidden;">' + story.artwork[ii].title + '</a></li>');
+                    }
+                    $('#PREFS-SWITCH-CONTENT').listview('refresh');
+                    //$($('#PREFS-SWITCH-CONTENT a').get(g_LanguageIndex)).addClass('ui-btn-active');
+                    ////$($('#PREFS-SWITCH-CONTENT a img').get(g_LanguageIndex)).css('visibility', 'visible');
+
+                    $('a', target).on(g_Click, function (event) {
+                        //$.mobile.loading('show');
+                        g_LanguageIndex = $(event.target).attr('INDEX');
+                        $.cookie('LANGUAGE-' + story.token, story.artwork[g_LanguageIndex].token, { expires: 365 });
+                        refreshStory(true);
+                        $('#PREFS-SWITCH').popup('close');
+                        //$.mobile.loading('hide');
+                    });
+
+                    $('#PREFS-SWITCH').popup('open');
+                }
+            } else {
+                if (story.language.length > 1) {
+
+                    $('#NEW-ARTWORK-LABEL').hide();
+                    $('#NEW-LANGUAGE-LABEL').show();
+
+                    var target = $('#PREFS-SWITCH-CONTENT');
+                    target.empty();
+
+                    for (var ii = 0; ii < story.language.length; ii++) {
+                        target.append('<li><a INDEX="' + ii + '" id="' + story.language[ii].token + '"><img src="img/greenCheck-small.png" class="ui-li-icon" style="visibility: hidden;">' + story.language[ii].title + '</a></li>');
+                    }
+                    $('#PREFS-SWITCH-CONTENT').listview('refresh');
+                    //$($('#PREFS-SWITCH-CONTENT a').get(g_LanguageIndex)).addClass('ui-btn-active');
+                    ////$($('#PREFS-SWITCH-CONTENT a img').get(g_LanguageIndex)).css('visibility', 'visible');
+
+                    $('a', target).on(g_Click, function (event) {
+                        //$.mobile.loading('show');
+                        g_LanguageIndex = $(event.target).attr('INDEX');
+                        $.cookie('LANGUAGE-' + story.token, story.language[g_LanguageIndex].token, { expires: 365 });
+                        refreshStory(true);
+                        $('#PREFS-SWITCH').popup('close');
+                        //$.mobile.loading('hide');
+                    });
+
+                    $('#PREFS-SWITCH').popup('open');
+                }
+            }
+
+
+        });
+
+
+        $('#PERSONALIZE-1 .NEXT').on(g_Click, function (event) {
+            var childName = $('#CHILD-NAME').val();
+            var parent1 = $('#PARENT-1').val();
+            var parent2 = $('#PARENT-2').val();
+
+            if (childName == '' || parent1 == '') {
+                $('#PERSONALIZE-1 .ERROR').slideDown();
+                event.stopPropagation();
+                return false;
+            }
+
+            $('#PERSONALIZE1 .ERROR').slideUp();
+
+            g_ChildName = childName;
+            g_Parent1 = parent1;
+            g_Parent2 = parent2;
+
+            console.log('childName: ' + g_ChildName);
+            console.log('parent1: ' + g_Parent1);
+            console.log('parent2: ' + g_Parent2);
+
+            $.cookie('CHILD-NAME', g_ChildName, { expires: 999 });
+            $.cookie('PARENT-1', g_Parent1, { expires: 999 });
+            $.cookie('PARENT-2', g_Parent2, { expires: 999 });
+        });
+
+        console.log('attaching to ' + g_Click);
+        $('#PERSONALIZE-2 [data-role="content"] a').on(g_Click, function (event) {
+            console.log('clicked on content!!!');
+            //old
+            //g_CurStory = $(event.target).attr('STORY-INDEX')
+            g_CurStory = $(event.target).attr('STORY-CATEGORY-INDEX');
+            console.log("g_CurStory -->" + g_CurStory)
+
+            $.cookie("CUR-STORY", g_CurStory, { expires: 999 });
+
+            var story = g_Stories[g_CurStory];
+            console.log("You selected story:" + story.title);
+
+            if (story.token == "LTMonitoringEEG" || story.token == "overnightsurg" || story.token == "audio") { // story that has different lenght between boy and girl
+                if (story.artwork.length == 1) {
+                    g_ArtworkIndex = 0;
+                    g_LanguageIndex = 0;
+                    $.mobile.changePage('#MAIN-STORY');
+                }
+                else {
+                    $.mobile.changePage('#PERSONALIZE-3');
+                }
+            } else {
+                if (story.language.length == 1 && story.artwork.length == 1) {
+                    g_ArtworkIndex = 0;
+                    g_LanguageIndex = 0;
+                    $.mobile.changePage('#MAIN-STORY');
+                }
+                else {
+                    $.mobile.changePage('#PERSONALIZE-3');
+                }
+            }
+
+
+        });
+
+        $('#PERSONALIZE-3 .NEXT').on(g_Click, function (event) {
+            g_LanguageIndex = $('input[name="LANGUAGE"]:checked').attr('index');
+            g_ArtworkIndex = $('input[name="ARTWORK"]:checked').attr('index')
+
+            var story = g_Stories[g_CurStory];
+
+            $.cookie('LANGUAGE-' + story.token, story.language[g_LanguageIndex].token, { expires: 999 });
+            $.cookie('ARTWORK-' + story.token, story.artwork[g_ArtworkIndex].token, { expires: 999 });
+        });
+
+        $('#ABOUT-BUTTON').on(g_Click, function (event) {
+            $('#INTRO-2 .NEXT').hide();
+        });
+
+        $('.PAGE-TURN').on(g_Click, function (event) {
+            var curPage = window.storySwipe.getPos();
+            /* var target = $(event.target).parents('a'); */
+            var target = $(event.target);
+
+            if ((target.attr('id') == 'NEXT-PAGE') && (target.text() != 'Done')) {
+                window.storySwipe.next();
+            } else if ((target.attr('id') == 'NEXT-PAGE') && (target.text() == 'Done')) {
+                $.mobile.changePage("#surveyDialogPage", {
+                    role: "dialog"
+                });
+            }
+            else if (target.attr('id') == 'PREV-PAGE') {
+                window.storySwipe.prev();
+            }
+            else {
+                console.log('unrecognized event ID: ' + target.attr('id'));
+            }
+        });
+    });
+
+    $('#MAIN-STORY').on('pageshow', function () {
+        console.log('MAIN-STORY pageshow');
+
+        //        $('#PERSONALIZE-2 .STORY-LIST a').removeClass('ui-btn-active');
+        //        $($('#PERSONALIZE-2 .STORY-LIST a').get(g_CurStory)).addClass('ui-btn-active');
+
+        console.log('making visible: ' + g_CurStory);
+
+        $('#PERSONALIZE-2 .STORY-LIST a img').css('visibility', 'hidden')
+        //$($('#PERSONALIZE-2 .STORY-LIST a img').get(g_CurStory)).css('visibility', 'visible');
+
+        $('#PERSONALIZE-2 .STORY-CATEGORIES a img').css('visibility', 'hidden')
+        //$($('#PERSONALIZE-2 .STORY-CATEGORIES a img').get(g_CurStory)).css('visibility', 'visible');
+
+        $('#selectStoryIcon_' + g_CurStory).find("img").css('visibility', 'visible');
+
+        console.log('g_CurrStory:' + g_CurStory.title);
+
+        //console.log('done w MAIN-STORY pageshow');
+        ///$('#PERSONALIZE-1 .NEXT').attr('href', '#MAIN-STORY');
+    }).on('pagebeforeshow', function () {
+
+
+        $('#MAIN-STORY').css('visibility', 'hidden').css('display', 'block');
+
+        if (window.storySwipe != undefined) {
+            console.log('killing story swipe!');
+            window.storySwipe.kill();
+        }
+        //console.log('one time storySwipe init: ' + g_Click + ':' + window.StatusBar);
+        window.storySwipe = Swipe(document.getElementById('STORY-SWIPE'), {
+            'continuous': true,
+            'callback': function (index, element) {
+                flipToPage(index);
+            }
+        });
+
+
+        if (g_CurStory == g_PrevStory) {
+            refreshStory(false)
+        }
+        else {
+            g_CurSlideIndex = 0;
+            g_FirstSlideStop = true;
+            g_LastSlideStop = false;
+            $('a#PREV-PAGE').css('visibility', 'hidden');
+            $('a#NEXT-PAGE').css('visibility', 'visible');
+            $('a#NEXT-PAGE').text('Next');
+            $('a#NEXT-PAGE').buttonMarkup({ icon: "arrow-r" });
+
+            newStory();
+            g_PrevStory = g_CurStory;
+        }
+
+        $('#MAIN-STORY').css('display', '').css('visibility', '');
+    });
+
+    $('#PERSONALIZE-1').on('pagebeforeshow', function () {
+
+        $('#CHILD-NAME').val(g_ChildName);
+        $('#PARENT-1').val(g_Parent1);
+        $('#PARENT-2').val(g_Parent2);
+    });
+
+    $('#PERSONALIZE-3').on('pagebeforeshow', function () {
+        var story = g_Stories[g_CurStory];
+
+        $('#ARTWORK-OPTIONS .ui-radio').remove();
+        $('#LANGUAGE-OPTIONS .ui-radio').remove();
+
+        for (var ii = 0; ii < story.language.length; ii++) {
+            var language = story.language[ii];
+
+            console.log('language: ' + language.token);
+
+            $('#LANGUAGE-OPTIONS').append(
+                '<input type="radio" name="LANGUAGE" INDEX="' + ii + '" id="' + language.token + '" ' + ((language.default) ? 'checked="checked"' : '') + '>' +
+                '<label for="' + language.token + '">' + language.title + '</label>'
+            );
+        }
+
+        $('#LANGUAGE-OPTIONS').toggle(story.language.length != 1);
+
+        var storyCookie = $.cookie('LANGUAGE-' + story.token);
+        if (storyCookie) {
+            $('#' + storyCookie).prop('checked', true);
+        }
+
+
+        for (var ii = 0; ii < story.artwork.length; ii++) {
+            var artwork = story.artwork[ii];
+
+            $('#ARTWORK-OPTIONS').append(
+                '<input type="radio" name="ARTWORK" INDEX="' + ii + '" id="' + artwork.token + '" ' + ((artwork.default) ? 'checked="checked"' : '') + '>' +
+                '<label for="' + artwork.token + '">' + artwork.title + '</label>'
+            );
+        }
+
+        $('#ARTWORK-OPTIONS').toggle(story.artwork.length != 1);
+
+        var storyCookie = $.cookie('ARTWORK-' + story.token);
+        if (storyCookie) {
+            $('#' + storyCookie).prop('checked', true);
+        }
+
+
+        $('#PERSONALIZE-3 [data-role="content"]').trigger('create');
+    });
+
+    g_LanguageTable = {
+        'english': {
+            end: 's',
+            and: 'and',
+            plural: 'are',
+            sing: 'is',
+            or: 'or'
+        },
+        'spanish': {
+            end: 's',
+            and: 'y',
+            plural: 'son',
+            sing: 'es',
+            or: 'or'
+        },
+        'pirate': {
+            end: 's',
+            and: 'and',
+            plural: 'be',
+            sing: 'be',
+            or: 'or'
+        }
+    }
+
+    function replaceStorySymbols(text, story_name) {
+
+        text = text.substring(2);
+
+        var parentsLabel = g_Parent1;
+        var parentsOR = g_Parent1;
+        var parentsPlural;
+        var parentsPluralOpp;
+        var parentsVerb;
+        var lang = g_LanguageTable[g_Stories[g_CurStory].language[g_LanguageIndex].token];
+
+        if (g_Parent2 != '') {
+            parentsLabel += ' ' + lang.and + ' ' + g_Parent2;
+            parentsPlural = lang.end;
+            parentsPluralOpp = '';
+            parentsVerb = lang.plural;
+            parentsOR += ' ' + lang.or + ' ' + g_Parent2;
+        }
+        else {
+            parentsPlural = ''
+            parentsVerb = lang.sing
+            parentsPluralOpp = lang.end;
+        }
+
+        text = text.replace(/{{CHILD-NAME}}/g, g_ChildName);
+        text = text.replace(/{{PARENTS-LABEL}}/g, parentsLabel);
+        text = text.replace(/{{PARENTS-PLURAL}}/g, parentsPlural);
+        text = text.replace(/{{PARENTS-PLURAL-OPP}}/g, parentsPluralOpp);
+        text = text.replace(/{{PARENTS-OR}}/g, parentsOR);
+        text = text.replace(/{{PARENTS-VERB}}/g, parentsVerb);
+
+        return text;
+    }
+
+    function doLayout(target) {
+        var headerList = $('#MAIN-STORY > [data-role="header"]');//$('#MAIN-STORY > [data-role="header"]');
+        var footer = $('#MAIN-STORY > [data-role="footer"]');
+
+        var header = ($(headerList[1]).css('display') == 'none') ? $(headerList[0]) : $(headerList[1]);
+
+        //var contentHeight = footer.offset().top - header.offset().top - header.height()
+
+        var contentHeight = $(window).height() - header.height() - footer.height();
+
+        var contentWidth = header.width();
+
+        //console.log(footer.offset().top + ', ' + header.offset().top + ', ' + header.height());
+
+
+        $('#MAIN-SCREEN').css('width', contentWidth + 'px').css('height', contentHeight + 'px').css('top', header.offset().top + 'px');
+
+
+        var nodeImg = $('img', target);
+
+        var imgWidth = nodeImg[0].naturalWidth;
+        var imgHeight = nodeImg[0].naturalHeight;
+
+        //console.log('B4: ' + nodeImg.width() + ',' + nodeImg.height() + '|||' + contentHeight);
+
+        //console.log(footer.offset().top + ',' + header.offset().top + ',' + header.height());
+
+        if (imgWidth == 0 || imgHeight == 0 || contentHeight == 0 || header.height() == 0 || footer.offset().top == 0) {
+            console.log('layout width / height is zero so skipping this' + nodeImg.length + ': ' + imgWidth + ',' + imgHeight + ',' + contentHeight);
+            setTimeout(function () {
+                doLayout(target)
+            }, 100)
+            return;
+        }
+
+        var nodeTXT = $('div.PAGE-TXT', target);
+
+        nodeTXT.css('height', '');
+        nodeTXT.css('width', '');
+
+        var txtHeight = nodeTXT.outerHeight(true);
+
+        if (txtHeight < contentHeight / 10) {
+            txtHeight = contentHeight / 10;
+        }
+
+        var maxImgHeight = contentHeight - txtHeight;
+
+        if (maxImgHeight * imgWidth / imgHeight > contentWidth) {
+            maxImgHeight = contentWidth * imgHeight / imgWidth;
+        }
+
+        var imgWidth = parseInt(maxImgHeight * imgWidth / imgHeight);
+        maxImgHeight = parseInt(maxImgHeight);
+
+        nodeImg.css('width', imgWidth + 'px');
+        nodeImg.css('height', maxImgHeight + 'px');
+
+        //console.log('AFTER: ' + imgWidth + ', ' + parseInt(maxImgHeight) + '|||' + txtHeight + ',' + contentHeight);
+
+        nodeTXT.css('height', (contentHeight - parseInt(maxImgHeight) - 10) + 'px');
+
+        //console.log('layout complete for ' + target.attr('id') + ' : ' + nodeImg.attr('src') + ' imgHeight:' + maxImgHeight + ' txtHeight:' + txtHeight + ' contentH:' + contentHeight);
+
+        target.css('visibility', 'visible');
+        $('#MAIN-SCREEN').fadeOut(200);
+    }
+
+
+    function setupSlide(story, parent, index) {
+
+        var language = story.language[g_LanguageIndex];
+        var artwork = story.artwork[g_ArtworkIndex];
+
+        parent.css('visibility', 'hidden');
+
+        if (story.token == "overnightsurg" || story.token == "audio") { // story that has different lenght between boy and girl
+            if (index >= 0 && index < artwork.text.length) {
+                var imgParent = $('img', parent).parent();
+                var imgSrc = 'stories/' + story.categoryToken + '/' + story.token + '/' + artwork.token + '/' + story.imageToken + artwork.token + (index + 1) + '.jpg';
+
+                imgParent.empty();
+
+                var newNode = $('<img src="' + imgSrc + '">');
+
+                imgParent.append(newNode);
+
+                newNode.on(g_Click, function (event) {
+                    console.log('clickec in artwork');
+
+                    var story = g_Stories[g_CurStory];
+
+                    if (story.artwork.length > 1) {
+                        $('#NEW-ARTWORK-LABEL').show();
+                        $('#NEW-LANGUAGE-LABEL').hide();
+
+                        var target = $('#PREFS-SWITCH-CONTENT');
+                        target.empty();
+
+                        for (var ii = 0; ii < story.artwork.length; ii++) {
+                            target.append('<li><a INDEX="' + ii + '" id="' + story.artwork[ii].token + '"><img src="img/greenCheck-small.png" class="ui-li-icon" style="visibility: hidden;">' + story.artwork[ii].title + '</a></li>');
+                        }
+                        $('#PREFS-SWITCH-CONTENT').listview('refresh');
+                        //            $($('#PREFS-SWITCH-CONTENT a').get(g_ArtworkIndex)).addClass('ui-btn-active');
+                        ////$($('#PREFS-SWITCH-CONTENT a img').get(g_ArtworkIndex)).css('visibility', 'visible');
+
+                        $('a', target).on(g_Click, function (event) {
+                            //$.mobile.loading('show');
+                            g_ArtworkIndex = $(event.target).attr('INDEX');
+                            $.cookie('ARTWORK-' + story.token, story.artwork[g_ArtworkIndex].token, { expires: 365 });
+                            refreshStory(true);
+                            $('#PREFS-SWITCH').popup('close');
+                            //$.mobile.loading('hide');
+                        });
+
+                        $('#PREFS-SWITCH').popup('open');
+                    }
+                });
+                //$('img', parent).show().attr('src', 'stories/' + story.token + '/' + artwork.token + '/' + story.imageToken + artwork.token + (index + 1) + '.jpg');
+
+                $('.PAGE-TXT', parent).text(replaceStorySymbols(artwork.text[index], "boy_and_girl_are_different_text"));
+                doLayout(parent);
+            }
+            else {
+                $('img', parent).hide();
+                $('.PAGE-TXT', parent).text('');
+            }
+        } else {
+            if (index >= 0 && index < language.text.length) {
+                var imgParent = $('img', parent).parent();
+                var imgSrc = 'stories/' + story.categoryToken + '/' + story.token + '/' + artwork.token + '/' + story.imageToken + artwork.token + (index + 1) + '.jpg';
+
+                imgParent.empty();
+
+                var newNode = $('<img src="' + imgSrc + '">');
+
+                imgParent.append(newNode);
+
+                newNode.on(g_Click, function (event) {
+                    console.log('clicked in artwork');
+
+                    var story = g_Stories[g_CurStory];
+
+                    if (story.artwork.length > 1) {
+                        $('#NEW-ARTWORK-LABEL').show();
+                        $('#NEW-LANGUAGE-LABEL').hide();
+
+                        var target = $('#PREFS-SWITCH-CONTENT');
+                        target.empty();
+
+                        for (var ii = 0; ii < story.artwork.length; ii++) {
+                            target.append('<li><a INDEX="' + ii + '" id="' + story.artwork[ii].token + '"><img src="img/greenCheck-small.png" class="ui-li-icon" style="visibility: hidden;">' + story.artwork[ii].title + '</a></li>');
+                        }
+                        $('#PREFS-SWITCH-CONTENT').listview('refresh');
+                        //            $($('#PREFS-SWITCH-CONTENT a').get(g_ArtworkIndex)).addClass('ui-btn-active');
+                        ////$($('#PREFS-SWITCH-CONTENT a img').get(g_ArtworkIndex)).css('visibility', 'visible');
+
+                        $('a', target).on(g_Click, function (event) {
+                            //$.mobile.loading('show');
+                            g_ArtworkIndex = $(event.target).attr('INDEX');
+                            $.cookie('ARTWORK-' + story.token, story.artwork[g_ArtworkIndex].token, { expires: 365 });
+                            refreshStory(true);
+                            $('#PREFS-SWITCH').popup('close');
+                            //$.mobile.loading('hide');
+                        });
+
+                        $('#PREFS-SWITCH').popup('open');
+                    }
+                });
+                //$('img', parent).show().attr('src', 'stories/' + story.token + '/' + artwork.token + '/' + story.imageToken + artwork.token + (index + 1) + '.jpg');
+
+                $('.PAGE-TXT', parent).text(replaceStorySymbols(language.text[index], "Others"));
+                doLayout(parent);
+            }
+            else {
+                $('img', parent).hide();
+                $('.PAGE-TXT', parent).text('');
+            }
+        }
+    }
+
+
+    function newStory(mainStoryVisible) {
+        var story = g_Stories[g_CurStory];
+        var storyTitle = g_ChildName + "'s Story";
+
+        console.log('switching to new story: ' + story.title);
+
+        if (story.token == "LTMonitoringEEG" || story.token == "overnightsurg" || story.token == "audio") {// story that has different lenght between boy and girl
+            $('span#TOTAL-PAGES').text(story.artwork[g_ArtworkIndex].text.length);
+        } else {
+            $('span#TOTAL-PAGES').text(story.language[g_LanguageIndex].text.length);
+        }
+
+        cur = window.storySwipe.getPos();
+
+        /* $('.MAIN-TITLE').text(story.title); */
+        $('.MAIN-TITLE').text(storyTitle);
+
+        setupSlide(story, $('#SLIDE-' + cur), g_CurSlideIndex);
+        setupSlide(story, $('#SLIDE-' + (cur + 1) % 3), g_CurSlideIndex + 1);
+        setupSlide(story, $('#SLIDE-' + (3 + cur - 1) % 3), g_CurSlideIndex - 1);
+
+        $('span#CUR-PAGE').text((g_CurSlideIndex + 1));
+    }
+
+
+    function refreshStory(mainStoryVisible) {
+
+        if (mainStoryVisible) {
+            console.log('main story visible');
+            $('#MAIN-SCREEN').fadeIn(200, function () {
+                newStory(mainStoryVisible);
+            });
+        }
+        else {
+            console.log('main story hidden');
+            //$('#MAIN-SCREEN').show();
+            newStory(mainStoryVisible);
+        }
+    }
+
+    function sorting(json_object, key_to_sort_by) {
+        function sortByKey(a, b) {
+            var x = a[key_to_sort_by];
+            var y = b[key_to_sort_by];
+            return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+        }
+
+        json_object.sort(sortByKey);
+    }
+
+
+</script>

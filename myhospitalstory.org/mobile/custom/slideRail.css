@@ -1,0 +1,16 @@
+div.SLIDE-RAIL {
+    white-space: nowrap;
+    position: relative;
+    left: 0px;
+    transition: opacity 1s;
+    -webkit-transition: opacity 1s;
+}
+
+div.SLIDE-PANEL {
+    display: inline-block;
+    white-space: normal;
+    vertical-align: top;
+}
+
+div.SLIDE-RAIL.MOUSE-DOWN {
+}

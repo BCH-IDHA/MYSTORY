@@ -1,0 +1,118 @@
+/* ************************** */
+
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+}
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.swipe-wrap > div {
+  float:left;
+  width:100%;
+  position: relative;
+  background-color: white;
+}
+
+/* ************************** */
+
+body {
+    font-family: arial;
+}
+
+body.MOBILE {
+    /*overflow: hidden;*/
+}
+
+
+div.swipe-wrap > div div:first-child {
+    text-align: center;
+    line-height: 0px;
+}
+
+#STORY-SWIPE img {
+    border: 1px solid #AAA;
+}
+
+div[data-role=footer] {
+    text-align: center;
+}
+
+h3.ERROR {
+    text-align: center;
+    color: red;
+    background: #FCC;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    display: none;
+}
+
+#PERSONALIZE1 label {
+    font-weight: bold;
+}
+
+form[data-mini="true"] label.ui-input-text {
+    font-size: 15px;
+    line-height: 10px;
+    font-weight: bold;
+}
+
+.PAGE-TXT {
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#PERSONALIZE-2 div[data-role="content"] {
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+@media all and (max-width: 500px) and (min-width: 0px) {
+    div.WITH-TEXT {
+        display: none;
+    }
+    div.WITHOUT-TEXT {
+        display: block;
+    }
+}
+
+@media all and (min-width: 500px) {
+    div.WITH-TEXT {
+        display: block;
+    }
+    div.WITHOUT-TEXT {
+        display: none;
+    }
+}
+
+.ui-bar-a, .ui-btn-up-a {
+    background: linear-gradient(rgb(0, 102, 153), rgb(0, 48, 135)) repeat scroll 0% 0% rgb(0, 48, 135);
+}
+
+.ui-btn-hover-a {
+    background: linear-gradient(rgb(65, 182, 230), rgb(0, 115, 150)) repeat scroll 0% 0% rgb(65, 182, 230);
+}
+
+.ui-btn-up-b {
+    background: linear-gradient(rgb(65, 182, 230), rgb(0, 48, 135)) repeat scroll 0% 0% rgb(0, 48, 135);
+}
+
+div.ABOUT-HEADER {
+    padding-top: 10px;
+    #line-height: 19px;
+    padding-bottom: 4px;
+    font-size: 11pt;
+}
+
+div.ABOUT-CONTENT {
+    font-weight: bold;
+    padding-left: 10px;
+    #line-height: 23px;
+    font-size: 11pt;
+}

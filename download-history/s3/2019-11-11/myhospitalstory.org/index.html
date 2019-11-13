@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>My Hospital Story</title>
+  </head>
+
+  <body>
+
+    <script src="bootstrap-master/docs/assets/js/jquery.js"></script>
+    <script src="mobile/cache/detectMobileBrowser.js"></script>
+
+
+  </body>
+
+
+    <script>
+
+        $(function() {
+
+            if ($.browser.mobile) {
+                location.href = "mobile/index.html"
+            }
+            else {
+                location.href="mobile/index.html"
+            }
+        })
+
+
+    </script>
+
+</html>

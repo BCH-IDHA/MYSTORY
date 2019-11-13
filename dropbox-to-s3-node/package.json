@@ -1,0 +1,21 @@
+{
+  "name": "dropbox-to-s3-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.561.0",
+    "dotenv": "^8.2.0",
+    "dropbox": "^4.0.30",
+    "isomorphic-fetch": "^2.2.1",
+    "moment": "^2.24.0",
+    "unzipper": "^0.10.5",
+    "winston": "^3.2.1",
+    "winston-daily-rotate-file": "^4.2.1"
+  }
+}
