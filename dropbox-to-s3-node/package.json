@@ -13,7 +13,7 @@
     "dotenv": "^8.2.0",
     "dropbox": "^4.0.30",
     "isomorphic-fetch": "^2.2.1",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "unzipper": "^0.10.5",
     "winston": "^3.2.1",
     "winston-daily-rotate-file": "^4.2.1"
